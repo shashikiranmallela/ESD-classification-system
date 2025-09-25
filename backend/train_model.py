@@ -23,7 +23,7 @@ label_mapping = {
 key_predictor_indices = [3, 4, 6, 14, 27, 31, 32, 33]
 
 # Load the dataset
-df = pd.read_csv('../data/dermatology.data', header=None, na_values='?', dtype=object)
+df = pd.read_csv('./data/dermatology.data', header=None, na_values='?', dtype=object)
 
 # --- Data Preparation ---
 df.dropna(subset=[33], inplace=True)

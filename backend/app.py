@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app) # Enable CORS for front-end communication
 
 # Load the trained model and other data
-model_data = load('backend/trained_model/model_data.joblib')
+model_data = load('trained_model/model_data.joblib')
 model = model_data['model']
 
 # A dictionary to map the labels from the dataset to the disease names
