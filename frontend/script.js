@@ -69,7 +69,7 @@ class ESDClassifier {
         
         try {
             // Send the predictors to the backend for classification
-            const response = await fetch('https://esd-classification-system-api.onrender.com/predict', {
+            const response = await fetch('https://esd-classification-system.onrender.com/predict', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
