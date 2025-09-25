@@ -24,8 +24,8 @@ WORKDIR /app
 COPY --from=builder /app/trained_model ./trained_model/
 COPY backend/app.py .
 
-# Install only the production dependencies
-RUN pip install --no-cache-dir flask gunicorn joblib pandas scikit-learn numpy xgboost flask-cors
+# Install only the production dependencies, including imblearn which the model needs
+RUN pip install --no-cache-dir flask gunicorn joblib pandas scikit-learn numpy xgboost flask-cors imblearn
 
 # Expose the port the app runs on
 EXPOSE 8000
