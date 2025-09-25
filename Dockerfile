@@ -3,11 +3,11 @@ FROM python:3.9-slim as builder
 
 WORKDIR /app
 
-# Install dependencies for model training
+# Copy and install dependencies for model training
 COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the data and training script from their respective folders
+# Copy the data and training script
 COPY backend/train_model.py .
 COPY data/dermatology.data ./data/
 COPY data/dermatology.names ./data/
@@ -25,7 +25,7 @@ COPY --from=builder /app/trained_model ./trained_model/
 COPY backend/app.py .
 
 # Install only the production dependencies
-RUN pip install --no-cache-dir flask gunicorn joblib pandas scikit-learn numpy xgboost
+RUN pip install --no-cache-dir flask gunicorn joblib pandas scikit-learn numpy xgboost flask-cors
 
 # Expose the port the app runs on
 EXPOSE 8000

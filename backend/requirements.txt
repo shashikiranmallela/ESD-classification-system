@@ -6,3 +6,4 @@ numpy
 xgboost
 imblearn
 gunicorn
+flask-cors
