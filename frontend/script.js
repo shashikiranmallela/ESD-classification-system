@@ -27,7 +27,7 @@ class ESDClassifier {
             spongiosis: 0,
             inflammatoryMononuclearInfiltrate: 0,
             bandLikeInfiltrate: 0,
-            age: 30
+            age: 00
         };
         
         this.init();
